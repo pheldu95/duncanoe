@@ -1,0 +1,32 @@
+.mealCard{
+    transition: transform .2s;
+}
+
+.mealCard:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+
+}
+
+.mealUl{
+    border: solid gray .3px;   
+    border-radius: 5px;
+    
+
+}
+
+.fullViewDiv{
+    transition: transform .2s;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 8px 40px -12px rgba(0,0,0,0.1);
+    /* border: solid black .3px; */
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+}
+.fullViewDiv:hover{
+    transform: scale(1.10);
+    cursor: pointer;
+
+}

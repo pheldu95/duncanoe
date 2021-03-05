@@ -1,0 +1,93 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+    background-color: #98C4DE;
+    width: 900px;
+}
+
+.alert {
+    background-color: #ff4545;
+    margin: 50px;
+}
+
+.defaultForm {
+    background-color: #f2f2f2;
+    width: 30%;
+    height: 250px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 2px;
+}
+
+input {
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+.log-in, .log-out, .register {
+  background-color: #4F87A8;
+  border-radius: 40px;
+  color: #f8f8f8;
+  min-height: 50px;
+  min-width: 100px;
+  outline:0;
+  cursor: pointer;
+}
+
+/* #00acb0 */
+
+.log-in:hover, .log-out:hover, .register:hover {
+  background-color: rgb(0, 122, 192);
+}
+
+/* This line makes the "Register" and "Login" buttons look like links */
+.link-button {
+    background:none;
+    color:inherit;
+    border:none;
+    padding:0;
+    font: inherit;
+    outline:0;
+    border-bottom:1px solid #444; 
+    cursor: pointer;
+}
+
+.quantityCell{
+    display: flex;
+}
+
+.groupPackingAndRentals{
+    display: flex;
+}
+
+.default_hr{
+    border-top: 3px skyblue;
+    width: 1%
+
+}
+
+.quantityButtons{
+    padding-left: 30px;
+    padding-right: 1px;
+}
+.quantity{
+    padding-top: 20px;
+    padding-left: 30px;
+    font-size: large;
+}
+
+.navLink {
+    color: #f2f2f2;
+}
+
+.genericButton{
+    padding: 20px;
+}
+
+.genericInput{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+
+
+}
