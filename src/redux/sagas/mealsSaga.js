@@ -123,10 +123,29 @@ function mealSorter(meals){
     return sortedMeals;
 }
 
+function* deleteMeal(action){
+    let meal_id = action.payload.meal_id;
+    let trip_id = action.payload.trip_id;
+    try {
+        yield axios({
+            method: 'DELETE',
+            url: `/api/meals/${meal_id}`,
+        })
+        yield put({
+            type: 'GET_MEALS',
+            payload: trip_id
+        })
+    }
+    catch (error) {
+        console.log(error);
+        alert('Unable to delete meal');
+    }; 
+    
+}
 function* membersSaga() {
     yield takeLatest('ADD_MEAL', addMeal)
     yield takeLatest('GET_MEALS', getMeals)
-
+    yield takeLatest('DELETE_MEAL', deleteMeal)
 }
 
 

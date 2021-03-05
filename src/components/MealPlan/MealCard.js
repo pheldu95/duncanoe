@@ -27,6 +27,10 @@ class MealCard extends Component {
         
     }
 
+    handleDelete = (id) =>{
+        this.props.dispatch({ type: 'DELETE_MEAL', payload: { meal_id: id, trip_id: this.props.reduxState.trip.id}});
+    }
+
     render() {
         let day = this.props.day;
         let moreButton;
@@ -65,9 +69,11 @@ class MealCard extends Component {
                                     return(
                                         <p>
                                             {this.mealType(meal.meal)} {meal.name}
+                                            <Button style={{marginLeft:'5px'}}size='mini' onClick={() => this.handleDelete(meal.id)}>Delete</Button>
                                         </p>
                                     )
                                 })}
+                                
                             </Card.Description>
                         }
                 </Card.Content>

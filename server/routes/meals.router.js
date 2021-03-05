@@ -50,10 +50,28 @@ router.post('/:trip_id', (req, res) => {
             //want to use it again
             client.release()
         }
-    })().catch(e => console.error(e.stack))
-
-    
-    
+    })().catch(e => console.error(e.stack)) 
 });
 
+router.delete('/:meal_id', (req, res) => {
+    console.log(req.params.meal_id);
+    
+    ; (async () => {
+        const client = await pool.connect()
+        try {
+            await client.query('BEGIN')
+            let queryText = `DELETE FROM meal_ingredients WHERE meal_id = $1;`
+            await client.query(queryText, [req.params.meal_id]);
+            queryText = `DELETE FROM meals WHERE id = $1`
+            await client.query(queryText, [req.params.meal_id]);
+            await client.query('COMMIT')
+        } catch (error) {
+            await client.query('ROLLBACK')
+            throw error
+        } finally {
+            res.sendStatus(200)
+            client.release()
+        }
+    })().catch(e => console.error(e.stack))
+});
 module.exports = router;
